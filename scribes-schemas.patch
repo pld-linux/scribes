@@ -1,0 +1,13 @@
+diff -aurN scribes-0.2.2.orig/data/scribes.schemas scribes-0.2.2/data/scribes.schemas
+--- scribes-0.2.2.orig/data/scribes.schemas	2005-11-14 10:55:17.000000000 +0100
++++ scribes-0.2.2/data/scribes.schemas	2005-12-04 21:10:09.000000000 +0100
+@@ -109,7 +109,8 @@
+       		<applyto>/apps/scribes/encoding</applyto>
+       		<owner>Scribes</owner>
+       		<type>list</type>
+-      		<default>[]</default>
++		<list_type>string</list_type>
++      		<default>[none]</default>
+       		<locale name="C">
+ 				<short>Selected encodings</short>
+ 				<long>
