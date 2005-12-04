@@ -22,6 +22,7 @@ Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	scrollkeeper
 Requires:	python-gnome-extras-gtksourceview
 Requires:	python-gnome-extras-gtkspell
+Requires:	python-gnome-extras-print
 Requires:	python-gnome-ui >= 2.12.2-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
