@@ -1,18 +1,21 @@
-diff -aurN scribes-0.2.2.orig/data/scribes.desktop scribes-0.2.2/data/scribes.desktop
---- scribes-0.2.2.orig/data/scribes.desktop	2005-11-21 18:48:47.000000000 +0100
-+++ scribes-0.2.2/data/scribes.desktop	2005-12-04 20:43:46.000000000 +0100
-@@ -1,10 +1,11 @@
- [Desktop Entry]
- Encoding=UTF-8
- Name=Scribes Text Editor
+--- scribes-0.2.4/data/scribes.desktop	2006-02-03 12:38:56.572446000 +0100
++++ scribes-0.2.4/data/scribes.desktop.orig	2006-02-03 12:40:45.219236000 +0100
+@@ -4,14 +4,16 @@
+ Name[it]=Scribes - Editor di testo
+ Name[fr]=Scribes Editeur de Texte
+ Name[de]=Scribes ist (noch) ein Texteditor für GNOME
 +Name[pl]=Edytor tekstu Scribes
+ Comment=Edit text files
+ Comment[it]=Redigi file di testo
+ Comment[fr]=Edite les fichiers textes
+ Comment[de]=Textdateien bearbeiten
++Comment[pl]=Edytor plików tekstowych
  Exec=scribes %f
  Terminal=false
  Type=Application
  StartupNotify=true
  MimeType=text/plain;
--Icon=scribes.svg
+ Icon=scribes.svg
 -Categories=Application;Utility;TextEditor;
 \ Brak znaku nowej linii na ko�cu pliku
-+Icon=scribes
-+Categories=GTK;GNOME;;Utility;TextEditor;
++Categories=GTK;GNOME;Utility;TextEditor;

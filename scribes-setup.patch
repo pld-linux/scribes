@@ -1,44 +1,15 @@
-diff -aurN scribes-0.2.2.orig/setup.py scribes-0.2.2/setup.py
---- scribes-0.2.2.orig/setup.py	2005-12-01 07:10:39.000000000 +0100
-+++ scribes-0.2.2/setup.py	2005-12-04 20:41:11.000000000 +0100
-@@ -89,36 +89,6 @@
-     	print "You need GNOME Python version 2.12 or later to run Scribes"
-         exit(1)
+--- scribes-0.2.4/setup.py	2006-02-03 06:00:10.000000000 +0100
++++ scribes-0.2.4/setup.py~	2006-02-03 12:50:42.484562750 +0100
+@@ -126,7 +126,7 @@
  
--    try:
--
--        import gtksourceview
--
--    except ImportError:
--
--        print "You need the gtksourceview module in GNOME Python Extras version"
--        print " 2.12 or later to run Scribes."
--        exit(1)
--
--	try:
--
--		import gtkspell
--
--	except ImportError:
--
--		print "You need the gtkspell module in GNOME Python Extras version"
--        print " 2.12 or later to run Scribes."
--        exit(1)
--
--    # Check to see if Yelp is installed on the host system
--
--	cmd = "which yelp"
--	err, out = getstatusoutput(cmd)
--
--	if err:
--
--		print "You need Yelp version 2.12 or later to run Scribes."
--		exit(1)
--
- 	# Check to see if GConf is installed on the host system
+ 	return
  
- 	cmd = "which gconftool-2"
-@@ -175,7 +145,7 @@
+-check_dependencies()
++#check_dependencies()
+ 
+ # Trove classification
+ 
+@@ -170,7 +170,7 @@
  	data_files=[
  		("share/applications", ["data/scribes.desktop"]),
  		("share/application-registry", ["data/scribes.application"]),
@@ -47,7 +18,7 @@ diff -aurN scribes-0.2.2.orig/setup.py scribes-0.2.2/setup.py
  		("share/scribes/", ["data/scribes_toolbar_ui.xml"]),
  		("share/gnome/help/scribes/C", ["data/scribes.xml"]),
  		("share/gnome/help/scribes/C", ["data/legal.xml"]),
-@@ -190,51 +160,3 @@
+@@ -187,52 +187,5 @@
  	],
  	scripts=["scribes"],)
  
@@ -74,7 +45,7 @@ diff -aurN scribes-0.2.2.orig/setup.py scribes-0.2.2/setup.py
 -
 -if out:
 -
--    print "installing GConf schema files"
+-	print "installing GConf schema files"
 -
 -if err:
 -
@@ -98,4 +69,5 @@ diff -aurN scribes-0.2.2.orig/setup.py scribes-0.2.2/setup.py
 -
 -	print "Problem restarting down gconf."
 -
--print "scribes installation complete"
+ print "scribes installation complete"
+ 
