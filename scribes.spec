@@ -2,7 +2,7 @@ Summary:	Simple, slim and sleek text editor
 Summary(pl):	Prosty, niewielki i elegancki edytor tekstu
 Name:		scribes
 Version:	0.2.4
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Editors
 Source0:	http://openusability.org/download.php/86/%{name}-%{version}.tar.gz
@@ -19,9 +19,9 @@ BuildRequires:	scrollkeeper >= 0.3.5
 Requires(post,preun):	GConf2
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	scrollkeeper
-Requires:	python-gnome-extras-gtksourceview
+Requires:	python-gnome-desktop-gtksourceview
 Requires:	python-gnome-extras-gtkspell
-Requires:	python-gnome-extras-print
+Requires:	python-gnome-desktop-print
 Requires:	python-gnome-ui >= 2.12.2-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -73,11 +73,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ARTISTS AUTHORS CHANGELOG README TODO TRANSLATORS
 %attr(755,root,root) %{_bindir}/scribes
+%dir %{py_sitescriptdir}/Scribes
 %{py_sitescriptdir}/Scribes/*.py[co]
 %{_datadir}/%{name}
-
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/*.png
-
 %{_omf_dest_dir}/%{name}
 %{_sysconfdir}/gconf/schemas/scribes.schemas
