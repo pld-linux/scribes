@@ -1,7 +1,7 @@
 Summary:	Simple, slim and sleek text editor
 Summary(pl):	Prosty, niewielki i elegancki edytor tekstu
 Name:		scribes
-Version:	0.2.4
+Version:	0.2.4.3
 Release:	2
 License:	GPL
 Group:		Applications/Editors
