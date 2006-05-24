@@ -1,15 +1,14 @@
 Summary:	Simple, slim and sleek text editor
 Summary(pl):	Prosty, niewielki i elegancki edytor tekstu
 Name:		scribes
-Version:	0.2.2
+Version:	0.2.4.3
 Release:	2
 License:	GPL
 Group:		Applications/Editors
-Source0:	http://openusability.org/download.php/72/%{name}-%{version}.tar.gz
-# Source0-md5:	9e1641df915e56a8c451cd63f8e7be2b
+Source0:	http://openusability.org/download.php/86/%{name}-%{version}.tar.gz
+# Source0-md5:	e14aa68c45f7bb46f1786b82bd14a283
 Patch0:		%{name}-setup.patch
 Patch1:		%{name}-desktop.patch
-Patch2:		%{name}-schemas.patch
 URL:		http://scribes.sourceforge.net/
 BuildRequires:	GConf2-devel
 BuildRequires:	gtk+2-devel >= 2:2.8.0
@@ -36,7 +35,6 @@ Scribes jest jest prostym i ³atwym w u¿yciu edytorem tekstu dla GNOME.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 python setup.py build
@@ -75,11 +73,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ARTISTS AUTHORS CHANGELOG README TODO TRANSLATORS
 %attr(755,root,root) %{_bindir}/scribes
+%dir %{py_sitescriptdir}/Scribes
 %{py_sitescriptdir}/Scribes/*.py[co]
 %{_datadir}/%{name}
-
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/*.png
-
 %{_omf_dest_dir}/%{name}
 %{_sysconfdir}/gconf/schemas/scribes.schemas
