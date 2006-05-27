@@ -32,7 +32,7 @@ Scribes is a simple and easy to use text editor for GNOME.
 Scribes jest jest prostym i ³atwym w u¿yciu edytorem tekstu dla GNOME.
 
 %prep
-%setup -q
+%setup -q -n %{name}-0.2.4
 %patch0 -p1
 %patch1 -p1
 
