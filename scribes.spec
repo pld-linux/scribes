@@ -1,14 +1,12 @@
 Summary:	Simple, slim and sleek text editor
 Summary(pl):	Prosty, niewielki i elegancki edytor tekstu
 Name:		scribes
-Version:	0.2.4.3
-Release:	2
+Version:	0.3
+Release:	1
 License:	GPL
 Group:		Applications/Editors
-Source0:	http://openusability.org/download.php/86/%{name}-%{version}.tar.gz
-# Source0-md5:	e14aa68c45f7bb46f1786b82bd14a283
-Patch0:		%{name}-setup.patch
-Patch1:		%{name}-desktop.patch
+Source0:	http://prdownloads.sourceforge.net/scribes/%{name}-%{version}.tar.bz2
+# Source0-md5:	2abe30a606fcb6aa310c7322df8e5ab7
 URL:		http://scribes.sourceforge.net/
 BuildRequires:	GConf2-devel
 BuildRequires:	gtk+2-devel >= 2:2.8.0
@@ -32,23 +30,30 @@ Scribes is a simple and easy to use text editor for GNOME.
 Scribes jest jest prostym i ³atwym w u¿yciu edytorem tekstu dla GNOME.
 
 %prep
-%setup -q -n %{name}-0.2.4
-%patch0 -p1
-%patch1 -p1
+%setup -q
 
 %build
-python setup.py build
+%{__intltoolize}
+%{__aclocal} -I m4
+%{__autoconf}
+%{__automake}
+%{configure}
+%{__make} \
+	CC="%{__cc}" \
+	PREFIX=%{_prefix} \
+	LIBDIR=/%{_lib}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_sysconfdir}/gconf/schemas
 
-python setup.py install \
-        --optimize=2 \
-        --root $RPM_BUILD_ROOT
+%{__make} install \
+	PREFIX=%{_prefix} \
+	LIBDIR=/%{_lib} \
+	DESTDIR=$RPM_BUILD_ROOT
 
 rm -rf $RPM_BUILD_ROOT%{_datadir}/application-registry
-rm -f $RPM_BUILD_ROOT%{py_sitescriptdir}/Scribes/*.py
+rm -f $RPM_BUILD_ROOT%{py_sitescriptdir}/SCRIBES/*.py
 
 install data/scribes.schemas $RPM_BUILD_ROOT%{_sysconfdir}/gconf/schemas
 
@@ -71,12 +76,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc ARTISTS AUTHORS CHANGELOG README TODO TRANSLATORS
+%doc AUTHORS README TODO TRANSLATORS
 %attr(755,root,root) %{_bindir}/scribes
-%dir %{py_sitescriptdir}/Scribes
-%{py_sitescriptdir}/Scribes/*.py[co]
+%attr(755,root,root) %{_bindir}/.scribesclient
+%dir %{py_sitescriptdir}/SCRIBES
+%{py_sitescriptdir}/SCRIBES/*.py[co]
 %{_datadir}/%{name}
 %{_desktopdir}/*.desktop
-%{_pixmapsdir}/*.png
+%{_iconsdir}/hicolor/*/*/*.png
 %{_omf_dest_dir}/%{name}
 %{_sysconfdir}/gconf/schemas/scribes.schemas
