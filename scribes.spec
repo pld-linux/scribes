@@ -84,5 +84,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}
 %{_desktopdir}/*.desktop
 %{_iconsdir}/hicolor/*/*/*.png
+%{_iconsdir}/hicolor/*/*/*.svg
+%{_pixmapsdir}/scribes.svg
 %{_omf_dest_dir}/%{name}
 %{_sysconfdir}/gconf/schemas/scribes.schemas
