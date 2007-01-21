@@ -16,7 +16,7 @@ BuildRequires:	scrollkeeper >= 0.3.5
 BuildRequires:	python-gnome-desktop
 BuildRequires:	python-gnome-desktop-gtksourceview
 BuildRequires:	python-gnome-extras-gtkspell
-%pyrequires_eq  python-modules
+%pyrequires_eq	python-modules
 Requires(post,preun):	GConf2
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	scrollkeeper
