@@ -1,5 +1,5 @@
 Summary:	Simple, slim and sleek text editor
-Summary(pl):	Prosty, niewielki i elegancki edytor tekstu
+Summary(pl.UTF-8):   Prosty, niewielki i elegancki edytor tekstu
 Name:		scribes
 Version:	0.3
 Release:	2
@@ -29,8 +29,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Scribes is a simple and easy to use text editor for GNOME.
 
-%description -l pl
-Scribes jest jest prostym i ≥atwym w uøyciu edytorem tekstu dla GNOME.
+%description -l pl.UTF-8
+Scribes jest jest prostym i ≈Çatwym w u≈ºyciu edytorem tekstu dla GNOME.
 
 %prep
 %setup -q
