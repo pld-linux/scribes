@@ -1,5 +1,5 @@
 Summary:	Simple, slim and sleek text editor
-Summary(pl.UTF-8):   Prosty, niewielki i elegancki edytor tekstu
+Summary(pl.UTF-8):	Prosty, niewielki i elegancki edytor tekstu
 Name:		scribes
 Version:	0.3
 Release:	2
