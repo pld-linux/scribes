@@ -1,12 +1,12 @@
 Summary:	Simple, slim and sleek text editor
 Summary(pl.UTF-8):	Prosty, niewielki i elegancki edytor tekstu
 Name:		scribes
-Version:	0.3.2.7
+Version:	0.3.2.8
 Release:	1
 License:	GPL
 Group:		Applications/Editors
 Source0:	http://prdownloads.sourceforge.net/scribes/%{name}-%{version}.tar.bz2
-# Source0-md5:	2076a2399e6fcb61dcc8d71d2ca012c1
+# Source0-md5:	a593994bb80dd35a26a02676ba69e786
 URL:		http://scribes.sourceforge.net/
 BuildRequires:	GConf2-devel
 BuildRequires:	gtk+2-devel >= 2:2.8.0
