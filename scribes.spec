@@ -69,6 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 %gconf_schema_install scribes.schemas
 %update_desktop_database_post
 %scrollkeeper_update_post
+%update_icon_cache hicolor
 
 %preun
 %gconf_schema_uninstall scribes.schemas
@@ -76,6 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 %update_desktop_database_postun
 %scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
