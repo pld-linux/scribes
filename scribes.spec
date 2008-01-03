@@ -10,17 +10,19 @@ Source0:	http://prdownloads.sourceforge.net/scribes/%{name}-%{version}.tar.bz2
 URL:		http://scribes.sourceforge.net/
 BuildRequires:	GConf2-devel
 BuildRequires:	gtk+2-devel >= 2:2.8.0
-BuildRequires:	python-devel >= 2.5
+BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-gnome-devel >= 2.6.0
-BuildRequires:	rpmbuild(macros) >= 1.197
+BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.5
 BuildRequires:	python-gnome-desktop
 BuildRequires:	python-gnome-desktop-gtksourceview
 BuildRequires:	python-gnome-extras-gtkspell
-%pyrequires_eq	python-modules
 Requires(post,preun):	GConf2
 Requires(post,postun):	desktop-file-utils
+Requires(post,postun):	gtk+2
+Requires(post,postun):	hicolor-icon-theme
 Requires(post,postun):	scrollkeeper
+%pyrequires_eq	python-modules
 Requires:	python-gnome-desktop-gtksourceview
 Requires:	python-gnome-extras-gtkspell
 Requires:	python-gnome-desktop-print
