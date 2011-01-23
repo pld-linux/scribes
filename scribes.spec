@@ -5,27 +5,35 @@ Version:	0.3.3.3
 Release:	4
 License:	GPL
 Group:		Applications/Editors
-Source0:	http://prdownloads.sourceforge.net/scribes/%{name}-%{version}.tar.bz2
+Source0:	http://downloads.sourceforge.net/scribes/%{name}-%{version}.tar.bz2
 # Source0-md5:	1290e669550d3392791f1a21662939ee
 URL:		http://scribes.sourceforge.net/
 BuildRequires:	GConf2-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	docbook-dtd412-xml
+BuildRequires:	gettext-devel
+BuildRequires:	gnome-common
+BuildRequires:	gnome-doc-utils
 BuildRequires:	gtk+2-devel >= 2:2.8.0
+BuildRequires:	intltool
+BuildRequires:	pkgconfig
+BuildRequires:	python-dbus
 BuildRequires:	python-devel >= 1:2.5
-BuildRequires:	python-gnome-devel >= 2.6.0
-BuildRequires:	rpmbuild(macros) >= 1.311
-BuildRequires:	scrollkeeper >= 0.3.5
-BuildRequires:	python-gnome-desktop
 BuildRequires:	python-gnome-desktop-gtksourceview
 BuildRequires:	python-gnome-extras-gtkspell
-Requires(post,preun):	GConf2
+BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.311
+BuildRequires:	scrollkeeper >= 0.3.5
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 %pyrequires_eq	python-modules
 Requires:	python-gnome-desktop-gtksourceview
-Requires:	python-gnome-extras-gtkspell
 Requires:	python-gnome-desktop-print
+Requires:	python-gnome-extras-gtkspell
 Requires:	python-gnome-ui >= 2.12.2-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
